@@ -1,8 +1,8 @@
 # What is this
 
 Multiple open source projects have come to us and said
-*We like Kiwi TCMS and we need a system like that but we have no idea
-how to get started*. The reality is that the majority of these projects
+**We like Kiwi TCMS and we need a system like that but we have no idea
+how to get started**. The reality is that the majority of these projects
 rely on contributors and most of them would prefer to be developers and
 to contribute code! Testing regularly remains on the side.
 
@@ -24,7 +24,7 @@ Testing is a process for collecting information and filling a knowledge gap
 that we have, see
 [this illustration](https://raw.githubusercontent.com/atodorov/qa-automation-ruby-101/master/module00/testing_knowledge_gap.png).
 In the general case of an established software project we should start
-with an evaluation and find out which areas pose more risk:
+with an evaluation and find out which areas pose more risk than others:
 
 - Could be UI
 - Could be translations
@@ -36,9 +36,8 @@ To quickly start evaluating these areas:
 - Talk to your users & developers - they always know specific things
   which tend not to work often
 - Read through your bug tracker, check all reports for the last few versions
-- Talk to support/forum admins if you have such - when there are problems
-  people tend to ask about them rather often because they don't understand
-  what's going on
+- Talk to support/forum admins - when there are problems
+  people tend to ask about them
 
 When you start digging in the above resources you will start noticing patterns.
 Regressions in bug fixes and functionality will be immediately obvious. Questions
@@ -55,7 +54,7 @@ which would mostly be consumed as-a-service may not be.
 # You need test cases
 
 Armed with your list of risky areas you need to understand why these things
-happen which most of the time will hint at how they can be prevented in the future.
+happen which will hint at how they can be prevented in the future.
 Mind that not everything needs an automated check or even a manual scenario. Some
 items can be better resolved at the development process - e.g. more tooling, customized
 IDE/linter plugins, etc.
@@ -71,9 +70,7 @@ steps to reproduce will reveal different paths, e.g. more scenarios.
 
 Usually in testing & QA we organize the test cases that we have in test plans
 or test suites, e.g. "Installation testing", "Localization testing",
-"Performance testing", etc. The division isn't that important, it serves to help
-people make sense of things and be sure that they are talking more or less about
-the same thing. Especially people from different groups/organizations. The important
+"Performance testing", etc. The division isn't that important, the important
 thing is that you have a plan what needs to be done and where to focus your effort!
 
 
@@ -82,27 +79,39 @@ thing is that you have a plan what needs to be done and where to focus your effo
 Software testing/Quality Assistance (it's not really assurance anymore these days)
 is equal parts tools & technology, documentation and process. Be simple:
 
-- when would certain testing activities be executed - daily, weekly, on every pull request
+- When would certain testing activities be executed - daily, weekly, on every pull request
   or you will work from pre release branches
-- how much time is needed for various testing/stabilization and other pre-release
+- How much time is needed for various testing/stabilization and other pre-release
   activities
-- are you going to gate changes going into certain branches (e.g. string freeze,
+- Are you going to gate changes going into certain branches (e.g. string freeze,
   feature freeze, bug-fixes only) or not
-- who will be responsible for all of the above and how will they communicate? You
+- Who will be responsible for all of the above and how will they communicate? You
   don't want to turn this into blaming game but everyone needs to know where & how
-  testing fits in
-- what about the community, how are they going to be engaged.
+  testing fits
+- What about the community, how are they going to be engaged? Do you need full-time
+  contributors or part-time, etc. What level of access & knowledge is required from them
 
 
 # Engage your community
 
+You want to have test executions against various builds and work towards
+an increasing number of PASSing results.
+
 A fairly tipical process would be to have a small dedicated team who is responsible
 for evaluating risk, documenting test plans & test cases, overseeing the process(es)
-and a larger pool of volunteers who lend a hand as they wish.
+and a larger pool of volunteers who will help with test execution.
 
 Organizing test days per area would be a good way to go. Call to action for verifying
 that bugs have indeed been fixed before a release is also good. Some contributors
 would be happy to explore the cutting edge nightly builds and give you regular feedback.
+
+The frequency of test execution for each test plan varies:
+
+- Translation - probably once shortly before relase when you see you have 100% of
+  the desired languages. Then check for typos, language style, etc.
+- Main functionality - rather often, probably on nightly builds or weekly
+- Performance, specialized areas - one-two times per release probably, especially if
+  these aren't critical and/or do not change often
 
 
 # Using a TCMS
@@ -116,8 +125,8 @@ would be happy to explore the cutting edge nightly builds and give you regular f
 
 # Rinse & repeat
 
-It goes without saying but this is an iterative process. Design it like that from the
-start. Set aside a regular period in which you will be evaluating your testing process(es)
+This is an iterative process. Design it like that from the start.
+Set aside a regular period in which you will be evaluating your testing process(es)
 and tweaking them as needed.
 
 
